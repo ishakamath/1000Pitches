@@ -391,26 +391,25 @@
                 var valid;	
                 valid = validateContact();
                 if(valid) {
-                    $.ajax({
-                        url: "contact_mail.php",
-                        data:'contact_name='+$("#contact_name").val()+'&contact_email='+
-                                $("#contact_email").val()+'&contact_message='+
-                                $("#contact_message").val()+'&contactVal='+
-                                $("#contactVal").val(),
-                        type: "POST",
-                        success:function(data){
-                            if(data == 1){
-                                $("#thankMessage").css('display','block');
-                                $("#contactForm")[0].reset();
-                                document.getElementById("contactVal").value = "0";
-                                scrollToElement($('#section-5'));
-                            } else {
-                                alert("Error in sending mail. Please try again.");
-                                document.getElementById("contactVal").value = "0";
-                            }
-                        },
-                        error:function (){}
-                    });
+                    var brTag = '%0D%0A';
+                    var bodyText = '';
+                    var contact_name = jQuery('#contact_name').val();
+                    var contact_email = jQuery('#contact_email').val();
+                    var contact_message = jQuery('#contact_message').val();
+                    
+                    bodyText += 'Hi,'+brTag+brTag;
+                    bodyText += 'You have received a new message.'+brTag+brTag;
+                    bodyText += 'Name: '+contact_name+brTag;
+                    bodyText += 'Email: '+contact_email+brTag;
+                    bodyText += 'Message: '+contact_message+brTag+brTag;
+                    bodyText += 'Thanks,'+brTag;
+                    bodyText += '1000 Pitches'+brTag;
+                    
+                    
+                    var hrefText = "mailto:ishakamath@ucla.edu?subject=1000%20Pitches%20-%20You%20have%20a%20new%20message&body="+bodyText;
+                    $("#submitPitchForm").prop("href", hrefText);
+                    /*$("#submitPitchForm").trigger( "click" );*/
+                    $("#contactForm")[0].reset();
                 }
             }
             
