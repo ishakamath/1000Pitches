@@ -393,7 +393,6 @@
                 if(valid) {
                     var brTag = '%0D%0A';
                     var bodyText = '';
-                    var hrefText = "";
                     var contact_name = jQuery('#contact_name').val();
                     var contact_email = jQuery('#contact_email').val();
                     var contact_message = jQuery('#contact_message').val();
@@ -405,10 +404,8 @@
                     bodyText += 'Message: '+contact_message+brTag+brTag;
                     bodyText += 'Thanks,'+brTag;
                     bodyText += '1000 Pitches'+brTag;
-                    
-                    
-                    hrefText = "mailto:ishakamath@ucla.edu?subject=1000%20Pitches%20-%20You%20have%20a%20new%20message&body="+bodyText;
-                    document.getElementById("submitPitchForm").href = '"'+hrefText+'"'; 
+
+                    document.getElementById("submitPitchForm").href = "mailto:ishakamath@ucla.edu?subject=1000%20Pitches%20-%20You%20have%20a%20new%20message&body="+bodyText; 
                     document.getElementById("submitPitchForm").onclick = ""; 
                     /* $("#contactForm")[0].reset(); */
                 }
