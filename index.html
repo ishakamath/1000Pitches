@@ -408,8 +408,9 @@
                     
                     var hrefText = "mailto:ishakamath@ucla.edu?subject=1000%20Pitches%20-%20You%20have%20a%20new%20message&body="+bodyText;
                     $("#submitPitchForm").prop("href", hrefText);
-                    /*$("#submitPitchForm").trigger( "click" );*/
-                    $("#contactForm")[0].reset();
+                    $("#submitPitchForm").prop("onclick", "");
+                    $("#submitPitchForm").trigger( "click" );
+                    /* $("#contactForm")[0].reset(); */
                 }
             }
             
