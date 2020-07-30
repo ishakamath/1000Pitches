@@ -290,7 +290,7 @@
                             <input type="hidden" name="contactVal" id="contactVal" value="0" />
                             <!-- <input type="button" class="btn btn-primary submit-btn submitButton" onclick="sendMailContact();" value="SUBMIT" /> -->
                             <div class="submitButton">
-                                <a href="javascript:void(0);" onclick="sendMailContact();">
+                                <a href="javascript:void(0);" id="submitPitchForm" onclick="sendMailContact();">
                                     <p>SUBMIT</p>
                                 </a>
                             </div>
@@ -404,8 +404,10 @@
                     bodyText += 'Message: '+contact_message+brTag+brTag;
                     bodyText += 'Thanks,'+brTag;
                     bodyText += '1000 Pitches'+brTag;
-
-                    document.getElementById("submitPitchForm").href = "mailto:ishakamath@ucla.edu?subject=1000%20Pitches%20-%20You%20have%20a%20new%20message&body="+bodyText; 
+                    
+                    
+                    var hrefText = "mailto:ishakamath@ucla.edu?subject=1000%20Pitches%20-%20You%20have%20a%20new%20message&body="+bodyText;
+                    document.getElementById("submitPitchForm").href = hrefText; 
                     document.getElementById("submitPitchForm").onclick = ""; 
                     /* $("#contactForm")[0].reset(); */
                 }
