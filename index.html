@@ -407,7 +407,8 @@
                     
                     var hrefText = "mailto:ishakamath@ucla.edu?cc="+contact_email+"&subject=1000%20Pitches%20-%20You%20have%20a%20new%20message&body="+bodyText;
                     document.getElementById("submitPitchForm").href = hrefText; 
-                    document.getElementById("submitPitchForm").onclick = ""; 
+                    document.getElementById("submitPitchForm").onclick = "";
+                    $("#submitPitchForm").trigger( "click" );
                     $("#contactForm")[0].reset();
                 }
             }
