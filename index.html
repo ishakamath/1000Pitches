@@ -398,15 +398,14 @@
                     var contact_message = jQuery('#contact_message').val();
                     
                     bodyText += 'Hi,'+brTag+brTag;
-                    bodyText += 'You have received a new message.'+brTag+brTag;
                     bodyText += 'Name: '+contact_name+brTag;
                     bodyText += 'Email: '+contact_email+brTag;
                     bodyText += 'Message: '+contact_message+brTag+brTag;
+                    bodyText += 'We will get back to you soon.'+brTag+brTag;
                     bodyText += 'Thanks,'+brTag;
                     bodyText += '1000 Pitches'+brTag;
                     
-                    
-                    var hrefText = "mailto:ishakamath@ucla.edu?subject=1000%20Pitches%20-%20You%20have%20a%20new%20message&body="+bodyText;
+                    var hrefText = "mailto:ishakamath@ucla.edu?cc="+contact_email+"&subject=1000%20Pitches%20-%20You%20have%20a%20new%20message&body="+bodyText;
                     document.getElementById("submitPitchForm").href = hrefText; 
                     document.getElementById("submitPitchForm").onclick = ""; 
                     $("#contactForm")[0].reset();
